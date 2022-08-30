@@ -1,0 +1,33 @@
+{{value1}}
+
+<h5>Basic</h5>
+<input type="text" pInputText [ngModel]="value1"> 
+<span class="ml-2">{{value1}}</span>
+
+<h5>Float Label</h5>
+<span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="value2"> 
+    <label for="float-input">Username</label>
+</span>
+
+<!-- <p-listbox [options]="countries" [(ngModel)]="selectedCountries" [multiple]="true" optionLabel="name" filterBy="label" [listStyle]="{'max-height':'250px'}">
+    <ng-template pTemplate="header">
+        Header Content
+    </ng-template>
+    <ng-template pTemplate="filter" let-options="options">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+            <input type="text" pInputText placeholder="Filter" [(ngModel)]="filterValue">
+        </div>
+        <button pButton icon="pi pi-times" class="ml-3" (click)="myResetFunction(options)"></button>
+    </ng-template>
+    <ng-template let-country pTemplate="item">
+        <div class="country-item">
+            <img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" />
+            <div>{{country.name}}</div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        Footer Content
+    </ng-template>
+</p-listbox> -->

@@ -1,0 +1,50 @@
+#btn 
+{
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Roboto";
+}
+
+#postss
+{
+    font-family:  "Roboto";
+    margin-top: 350px;
+   margin-left: 200px;
+}
+#addpostformdiv
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Roboto";
+    font-size: 15px;
+}
+
+#arepost
+{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: "Roboto";
+    font-size: 15px;
+
+}
+
+#postsresults
+{
+  font-family: "Roboto";
+  font-family: 15px;
+}
+
+
+

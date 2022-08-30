@@ -1,0 +1,27 @@
+<p>Komponent: Property-binding</p>
+<!-- Property Binding -->
+<img style="width: 100%" [src]="imageUrl"/>
+<!-- String Interpolation -->
+<img style="width:100%" src="{{imageUrl}}"/>
+
+<br />
+<h1>
+    <!-- String Interpolation -->
+    {{title}}
+</h1>
+
+<br />
+<p>
+    Jak możecie się domyslać moim ulubionym samochodem jest {{brand}} {{model}}!
+</p>
+<p>
+    Jego moc wynosi: {{power}}KM
+</p>
+<p>
+    A moc w kW to {{power * converter}}
+</p>
+<p>
+    Używanie <strong>metod</strong> nie jest skomplikowane:
+    <br />
+    {{power}}KM = {{convertKMtokW()}}kW
+</p>

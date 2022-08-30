@@ -1,0 +1,38 @@
+<p *ngIf="isTimeForThisComponent" class="article-subject">
+    {{title}}
+</p>
+
+<p *ngIf="!isTimeForThisComponent" class="not-article-subject">
+    {{title}}
+</p>
+
+<div id="switch-test-container" *ngIf="isTimeForThisComponent"
+        style="width:860px;margin-left: auto;margin-right: auto;">
+    <!-- [(ngModel)] - dwukierunkowe wiązanie -> w kolejnych wpisie omówimy bardziej szczegółowo -->
+    <select [(ngModel)]="selectedCar">
+        <!-- Wykorzystujemy dyrektywę ngFor celem dodania elementów do wybrania -->
+        <option *ngFor="let car of cars;" [value]="car.id">{{car.name}}</option>
+    </select>
+    <br>
+    <br>
+
+    <!-- Dyrektywę ngSwitch używamy do wyświetlenia odpowiedniego zdjęcia samochodu -->
+    <div id="car-images" [ngSwitch]="selectedCar">
+        <div *ngSwitchCase="1">
+            <img width="100%"
+                    src="https://image.shutterstock.com/z/stock-photo-audi-rs-avant-c-in-motion-kiev-ukraine-june-editorial-photo-662321233.jpg">
+        </div>
+        <div *ngSwitchCase="2">
+            <img width="100%"
+                    src="https://image.shutterstock.com/z/stock-photo-pagani-sport-car-at-dreamcars-asia-expo-malaysia-637009.jpg">
+        </div>
+        <div *ngSwitchCase="3">
+            <img width="100%"
+                    src="https://image.shutterstock.com/z/stock-photo-hakone-japan-november-nissan-skyline-gtr-vspec-bnr-cruising-famous-hakone-1505614688.jpg">
+        </div>
+        <div *ngSwitchDefault>
+            <img width="100%"
+                    src="https://image.shutterstock.com/z/stock-photo-mortgage-default-stamp-depicting-home-loan-overdue-or-shortfall-failure-to-pay-off-line-of-credit-1362477851.jpg">
+        </div>
+    </div>
+</div>

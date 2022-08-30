@@ -1,0 +1,49 @@
+<div *ngIf="isTimeForThisComponent" class="article-subject">
+    <p>{{title}}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Cena</th>
+                <th>Moc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let car of cars;">
+                <td>{{car.brand}}</td>
+                <td>{{car.model}}</td>
+                <td>{{car.price}}</td>
+                <td>{{car.horsepower}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="!isTimeForThisComponent" class="not-article-subject">
+    <p>{{title}}</p>
+</div>
+
+<br>
+<tbody>
+    <tr *ngFor="let car of cars; let even = even; let odd = odd"
+        [ngClass]="{odd: odd, even: even}">
+    <td>{{car.brand}}</td>
+    <td>{{car.model}}</td>
+    <td>{{car.price}}</td>
+    <td>{{car.horsepower}}</td>
+        </tr>
+    </tbody>
+
+    <br>
+    <br>
+    <tbody>
+        <tr *ngFor="let car of cars; let firstElement = first;let lastElement = last" [ngClass]="{firstElement:firstElement,lastElement: lastElement}">
+
+            <td>{{car.brand}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.price}}</td>
+            <td>{{car.horsepower}}</td>
+        </tr>
+    </tbody>

@@ -1,0 +1,19 @@
+.even {
+    background-color:gray;
+    color:black;
+}
+
+.odd {
+    background-color: white;
+    color:black;
+}
+
+.firstElement {
+    background-color:gray;
+    color:black;
+}
+
+.lastElement {
+    background-color: white;
+    color:black;
+}

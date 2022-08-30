@@ -1,0 +1,50 @@
+<div id="btn">
+<button type="button" class="btn btn-info"  (click)="getPosts()">getPosts</button>&nbsp;
+<button type="button" class="btn btn-info"  (click)="getPost()">getPost</button>&nbsp;
+<button type="button" class="btn btn-info"  (click)="getPostByUser()">getPostByUser</button>&nbsp;
+<button type="button" class="btn btn-info"  (click)="addPost()">addPost</button>&nbsp;
+<button type="button" class="btn btn-info"  (click)="updatePost()">updatePost</button>&nbsp;
+<button type="button" class="btn btn-info"  (click)="deletePost()">deletePost</button>&nbsp;
+<button type="button" class="btn btn-info"  (click)="changePost()">changePost</button>
+</div>
+
+
+<div id="postss">
+<div  *ngFor="let p of allPosts$ | async">
+   -Lista postów-<br>
+   {{p.id}} - {{p.title}}
+</div>
+</div>
+
+<form [formGroup]="postForm"  (ngSubmit)="onSubmit()">
+<div id="addpostformdiv">
+<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dodaj post</label>
+<input id="adduserId" type="text" class="form-control" formControlName="post_userId"  placeholder="userId">
+<input id="addid" type="text" class="form-control" formControlName="post_id" placeholder="id">
+<input id="addtitle" type="text" class="form-control"formControlName="post_title"  placeholder="title">
+<input id="addbody" type="text" class="form-control" formControlName="post_body" placeholder="body">
+<button class="btn btn-primary" type="submit">Dodaj</button>
+</div>
+
+</form>
+
+<div id="post" *ngIf="userId2 != null;then arepost; else nopost " ></div>
+<!-- {{onepost.userId}} || {{onepost.title}} || {{onepost.body}} -->
+
+<ng-template #arepost >
+   <div id="postsresults">
+   userId: {{userId2}}<br>
+   id: {{id2}}<br>
+   title: {{title2}}<br>
+   body: {{body2}}<br>
+</div>
+</ng-template>
+
+
+<ng-template #nopost>
+
+</ng-template>
+
+
+
+

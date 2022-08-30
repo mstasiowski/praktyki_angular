@@ -1,0 +1,23 @@
+li {
+ background: rgb(221, 220, 220);   
+ margin: 5px;
+}
+
+.odd-li {
+    background: rgb(126, 126, 226);
+}
+
+.last-li {
+background: rgb(255, 133, 133);
+margin: 5px;
+}
+
+#container {
+    margin-top: 20px;
+   
+}
+
+#menu {
+   
+
+}

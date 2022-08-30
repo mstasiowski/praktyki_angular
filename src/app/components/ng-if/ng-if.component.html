@@ -1,0 +1,108 @@
+<p>ng-if works!</p>
+<p>{{days[6]}}</p>
+
+
+<ul>
+    <li *ngFor="let day of days;let i= index;let e=even;let l =last">
+          {{i}}  {{day}} || parzyste: {{e}}
+          
+    </li>
+</ul>
+
+
+
+<ul>
+    <li *ngFor="let dog of dogs">
+
+        <div *ngIf="dog.age >= 3">
+            {{dog.name}} ma lat: {{dog.age}}
+        </div>
+    </li>
+</ul>
+
+<!-- <app-reactive-form *ngFor="let i of [1,2,3,4]"></app-reactive-form> -->
+
+
+<div *ngIf="days.length > 0">
+
+<ul>
+    <ng-container *ngFor="let day of days;let e = even">
+    <li *ngIf="e">
+        {{day}}
+    </li>
+    </ng-container>
+</ul>
+
+</div>
+
+<!--  -->
+<div *ngIf="dogs.length < 0;then aredogs; else noDogs"></div>
+    
+    <ng-template #aredogs>
+        <div *ngFor="let dog of dogs">
+            {{dog.name}} ma lat {{dog.age}}
+        </div>
+    </ng-template>
+   
+    <ng-template #noDogs>
+        <p> nie ma ;/</p>
+    </ng-template>
+
+<!--  -->
+
+<div *ngFor="let day of days">
+    <div [ngSwitch]="day">
+        <div *ngSwitchCase="'Poniedziałek'">Montag</div>
+        <div *ngSwitchCase="'Wtorek'">Diemstag</div>
+        <div *ngSwitchCase="'Środa'">Mittwoch</div>
+        <div *ngSwitchDefault="">---</div>
+    </div>
+</div>
+
+<!-- Wyświetlanie danych czyli ngif i property hidden(obiekt zostaje w przeglądarce tylko ukryty) -->
+
+
+<!-- Data Binding 
+
+    -Property binding-[target]="expression"
+    -Two-way-binding-([ngModel])="expression"
+    -Event binding-(target)="statement"
+
+-->
+
+<h3 [className]="colorClass">Angular- property binding</h3>
+<img [src]="logoUrl">
+<input [maxLength]="maxLengt" [value]="inputText">
+<button [disabled]="isDisable" (click)="change()">Dodaj</button>
+
+<!-- Event -->
+
+<h3 [className]="colorClass">Event</h3>
+
+<input [disabled]="isDisable" (focus)="onFocus()">
+<br>
+<input [disabled]="isDisable" (click)="onClick($event)">
+<br>
+<input [disabled]="isDisable" (mousemove)="onMouseMove($event)">
+<br>
+<input [disabled]="isDisable" (paste)="onPaste()">{{inputText}}
+<br>
+<button (click)="change2()">Zmiana</button>
+<br>
+
+<p>Pracownik: {{profession}}, a jego umiejętność to {{skill}}</p>
+
+<!-- <label for="male">Zawód</label>
+<input [value]="profession" (input)="saveP($event)">
+<br>
+<label for="male">Umiejętność</label>
+<input [value]="skill" (input)="saveS($event)">
+<br> -->
+
+
+<label for="male"> Zawód </label>
+<input [(ngModel)]="profession">
+<br>
+<label for="male"> Umiejętność </label>
+<input [(ngModel)]="skill">
+<br>
